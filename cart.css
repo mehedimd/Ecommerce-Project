@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+ul li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #edeff6;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 60px 50px auto auto;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  grid-column: 1 / -1;
+}
+.main-menu {
+  background-color: white;
+  grid-column: 1 / -1;
+  z-index: 9999;
+}
+
+.main-header {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: header-color;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+/* Header section desing */
+@keyframes header-color {
+  0% {
+    background-color: dodgerblue;
+    color: white;
+  }
+  25% {
+    color: white;
+    background-color: orange;
+  }
+  50% {
+    background-color: skyblue;
+    color: black;
+  }
+  100% {
+    color: dodgerblue;
+  }
+}
+#headerTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 32px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.logo-section .logo {
+  color: dodgerblue;
+  font-size: x-large;
+  font-weight: 700;
+  cursor: pointer;
+}
+.nav-menu a,
+.login-section a {
+  padding: 8px 16px;
+  color: black;
+  font-weight: 500;
+}
+
+.nav-menu {
+  display: flex;
+}
+.nav-menu a:not(:last-child),
+.login-section a:not(:last-child) {
+  border-right: 1px solid black;
+}
+.nav-menu a:hover,
+.login-section a:hover {
+  color: dodgerblue;
+}
+#cart-icon {
+  border-right: none;
+}
+
+#menu-icon {
+  display: none;
+}
+.footer {
+  background-color: black;
+  color: white;
+  grid-column: 1 / -1;
+}
+/* footer section  */
+.footer {
+  padding: 32px;
+}
+.footer hr {
+  border: none;
+  height: 1px;
+  background-color: gray;
+}
+.footer .footer-top {
+  display: flex;
+  padding: 16px 0px;
+  justify-content: space-between;
+}
+.footer .footer-top ul {
+  line-height: 24px;
+}
+.footer .footer-top ul li a {
+  display: block;
+  color: whitesmoke;
+}
+.footer .footer-bottom {
+  text-align: center;
+}
+.footer .footer-bottom a {
+  color: dodgerblue;
+}
+#trans {
+  height: 2px;
+  width: 0px;
+  background-color: dodgerblue;
+  transition: width 1s;
+}
+.footer-top ul li:hover #trans {
+  width: 100%;
+}
+
+/* main section  */
+.main-container {
+  grid-column: 1 / -1;
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  justify-content: space-around;
+}
+.cartContainer {
+  width: 65%;
+  height: fit-content;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.products-title,
+.subtotal-title {
+  font-weight: 700;
+}
+.subtotal-title {
+  color: white;
+}
+.cartItems {
+  background-color: white;
+  display: flex;
+  column-gap: 24px;
+  padding: 16px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.cartItems .img-container {
+  width: 100px;
+  height: 100px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.productDetails .shortDescciption h5,
+p,
+h4 {
+  margin-bottom: 8px;
+}
+.productDetails .shortDescciption .productTitle {
+  font-weight: 300;
+}
+.productDetails .shortDescciption .productDesc {
+  font-size: 8px;
+}
+
+.quantityDetails {
+  display: flex;
+  column-gap: 16px;
+  font-weight: 700;
+}
+
+.quantityDetails input[type="button"]:not(.remove),
+button {
+  cursor: pointer;
+  background-color: dodgerblue;
+  border: 1px solid white;
+  color: white;
+  outline: none;
+  padding: 8px 16px;
+  font-weight: 700;
+}
+.quantityDetails .countQty {
+  background-color: tomato;
+}
+.quantityDetails .remove {
+  background-color: red;
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  outline: none;
+  padding: 8px 16px;
+  font-weight: 700;
+}
+.quantityDetails input[type="button"]:hover {
+  background-color: white;
+  border: 1px solid dodgerblue;
+  color: black;
+}
+
+.calculateBalance {
+  width: 30%;
+  height: fit-content;
+  text-align: center;
+  background-color: dodgerblue;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 8px;
+  padding: 16px;
+}
+.calculateBalance .proceedCheckout {
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 16px;
+}
+.calculateBalance .proceedCheckout input[type="button"] {
+  width: 100%;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  padding: 8px 0px;
+  cursor: pointer;
+}
+.calculateBalance .proceedCheckout input[type="button"]:hover {
+  border: 1px solid dodgerblue;
+  background-color: white;
+  color: dodgerblue;
+}
+
+@media only screen and (max-width: 767px) {
+  .main-container {
+    flex-direction: column;
+  }
+  .cartContainer {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .calculateBalance {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 429px) {
+  .quantityDetails {
+    flex-direction: column;
+  }
+}
